@@ -85,7 +85,7 @@ def insert_into_list(x, y):
 
 
 
-### While loop ###
+### While loop for guessing the word ###
 while keep_playing:
 	u_letter = raw_input('Please enter a letter: ')
 	u_letter = u_letter.lower()
