@@ -1,3 +1,3 @@
 # simple-python-scripts
 
-A collection of simple text-based scripts using python
+A collection of simple text-based games using Python
