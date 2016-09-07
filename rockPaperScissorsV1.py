@@ -1,7 +1,5 @@
-# This is a very basic text-based hangman game
+# This is a very basic text-based rock paper scissors game
 # Version 1
-
-
 
 
 import random
@@ -16,14 +14,14 @@ print '3 for scissors'
 
 
 # Get the user's choice and randomly select the computer's choice
-
 u_choice = int(raw_input('>> '))
 c_choice = random.randint(1, 3)
 
 
 # Correct a user choice error
 while u_choice not in [1, 2, 3]:
-    print 'You must select rock, paper or scissors. Please select again from the menu below:'
+    print 'You must select rock, paper or scissors.'
+    print 'Please select again from the menu below:'
     print '1 for rock'
     print '2 for paper'
     print '3 for scissors'
@@ -60,7 +58,7 @@ if u_choice == c_choice:
     print 'You tied.'
 
 
-# List winnning elifs for the user
+# List winning elifs for the user
 elif u_choice == 1 and c_choice == 3:
     print 'Rock beats scissors. You win!'
 elif u_choice == 2 and c_choice == 1:
@@ -76,8 +74,3 @@ elif u_choice == 2 and c_choice == 3:
     print 'Scissors beats paper. You lose.'
 elif u_choice == 3 and c_choice == 1:
     print 'Rock beats scissors. You lose.'
-
-
-
-
-
