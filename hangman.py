@@ -1,12 +1,12 @@
-# This is a very basic text-based hangman game
-
+#!/usr/bin/env python
 
 from random import randint
 
 
-### Generate a random word from the file dictionary.txt ###
-# My dictionary.txt file has close to 350,000 words in it (meaning it's hard to win ... )
-# Open the dictionary and read it
+# Generate a random word from the file dictionary.txt
+# (dictionary.txt file has close to 350,000 words in it
+# so it's hard to win ... )
+# Start by opening the dictionary and reading it
 open('dictionary.txt', 'r').read()
 
 # Turn the file into a list
@@ -18,12 +18,12 @@ ran_num = randint(0, (len(dictionary) - 1))
 # Select a word in the dictionary list at random
 ran_word = dictionary[ran_num]
 
-# Remove the last character of the word (the dictionary.txt file I am using
+# Remove the last character of the word (the dictionary.txt file
 # has a '/n' character at the end of each word)
 ran_word = ran_word[:-1]
 
 
-### Set up lists and variables ###
+# Set up lists and variables
 # Turn the ran_word string into a list of letters
 word = list(ran_word)
 avail_letters = [
@@ -73,14 +73,14 @@ guess_count = 0
 keep_playing = True
 
 
-### Start the game ###
+# Start the game
 print 'Welcome to Hangman!'
 raw_input('When you\'re readty to start, hit return: ')
 print '\nOkay, we\'ve chosen a word, and it\'s %d letters long.' % len(ran_word)
 print str(len(ran_word) * '_ ') + '\n'
 
 
-### Functions ###
+# Helper functions
 # This function finds the index of a character (or characters) in a list
 def find_indexes(lst, item):
     start_at = -1
@@ -97,14 +97,12 @@ def find_indexes(lst, item):
 
 # This function is used to insert correctly-guessed letters
 # into the correct_guesses list
-
-
 def insert_into_list(x, y):
     for integer in x:
         y[integer] = u_letter
 
 
-### While loop for guessing the word ###
+# While loop for guessing the word
 while keep_playing:
     u_letter = raw_input('Please enter a letter: ')
     u_letter = u_letter.lower()
@@ -145,7 +143,7 @@ while keep_playing:
                 if ran_word == ''.join(correct_guesses):
                     print '\nCongratulations! You solved the puzzle.'
                     print 'The word was ' + ran_word.upper() + '!'
-                    print 'You finished the puzzle in ' + str(guess_count) + ' guesses.\n'
+                    print 'You finished the puzzle in ' + str(guess_count) + ' guesses.\n'  # noqa
                     keep_playing = False
                 else:
                     print 'Here is the word so far: ' + ''.join(correct_guesses)
