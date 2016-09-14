@@ -1,4 +1,4 @@
-# simple-python-scripts
+# Simple Python Games
 
 A collection of simple text-based games built with Python
 
@@ -9,3 +9,7 @@ All three games run on the command line. To play, simply clone the repository an
 `$ python file-name-of-game.py`
 
 (Note: the dictionary.txt file is required for hangman.py to work.)
+
+## License
+
+This repository is released under the [MIT License](http://opensource.org/licenses/MIT).
