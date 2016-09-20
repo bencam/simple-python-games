@@ -2,13 +2,15 @@
 
 # This is a very basic text-based rock paper scissors game
 # Version 1
+# The main difference between version 1 and version 2 is that the latter
+# allows the user to choose how many rounds to play
 
 
 import random
 
 
-# Define a function to print the menu
 def menu():
+    """Print the menu"""
     print 'Welcome to the Rock, Paper, Scissors Game'
     print 'Please select:'
     print '1 for rock'
@@ -16,9 +18,8 @@ def menu():
     print '3 for scissors'
 
 
-# Define a function for the main part of the game
 def game():
-
+    """Play the game"""
     # Get the user's choice and randomly select the computer's choice
     u_choice = int(raw_input('>> '))
     c_choice = random.randint(1, 3)
