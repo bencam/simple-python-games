@@ -81,8 +81,8 @@ print str(len(ran_word) * '_ ') + '\n'
 
 
 # Helper functions
-# This function finds the index of a character (or characters) in a list
 def find_indexes(lst, item):
+    """Find the index of a character (or characters) in a list"""
     start_at = -1
     locs = []
     while True:
@@ -95,9 +95,8 @@ def find_indexes(lst, item):
             start_at = loc
     return locs
 
-# This function is used to insert correctly-guessed letters
-# into the correct_guesses list
 def insert_into_list(x, y):
+    """Insert correctly-guessed letters into the correct_guesses list"""
     for integer in x:
         y[integer] = u_letter
 
