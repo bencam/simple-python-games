@@ -8,15 +8,26 @@
 import random
 
 
-def num_of_rounds():
-    # Determine how many games the user would like to play
-    print '\nWelcome to the Rock-Paper-Scissors Game.'
+def print_main_menu():
     print 'How many rounds would you like to play?\n'
     print 'Please select:'
     print '1 for best out of one round.'
     print '2 for best out of three rounds.'
     print '3 for best out of five rounds.'
     print '4 for best out of seven rounds.'
+
+
+def print_sub_menu():
+    print '\nPlease select:'
+    print '1 for rock'
+    print '2 for paper'
+    print '3 for scissors'
+
+
+def num_of_rounds():
+    # Determine how many games the user would like to play
+    print '\nWelcome to the Rock-Paper-Scissors Game.'
+    print_main_menu()
     u_round_selection = int(raw_input('>> '))
 
     # Set variable indicating how many rounds the user wants to play
@@ -47,12 +58,10 @@ def num_of_rounds():
 
         else:
             print 'I\'m sorry, we didn\'t recognize that.'
-            print 'Please select:'
-            print '1 for best out of one round.'
-            print '2 for best out of three rounds.'
-            print '3 for best out of five rounds.'
-            print '4 for best out of seven rounds.'
-            num = raw_input('>> ')
+            print_main_menu()
+            u_round_selection = int(raw_input('>> '))
+
+    return round_selection_var
 
 
 def play_game(rounds):
@@ -64,11 +73,7 @@ def play_game(rounds):
     # While loop for the playing each round
     keep_playing = True
     while keep_playing:
-        # Print the menu
-        print '\nPlease select:'
-        print '1 for rock'
-        print '2 for paper'
-        print '3 for scissors'
+        print_sub_menu()
 
         # Get the user's choice and randomly select the computer's choice
         u_choice = int(raw_input('>> '))
@@ -76,10 +81,8 @@ def play_game(rounds):
 
         # Correct a user choice error
         while u_choice not in [1, 2, 3]:
-            print 'You must select rock, paper or scissors. Please select again from the menu below:'
-            print '1 for rock'
-            print '2 for paper'
-            print '3 for scissors'
+            print 'You must select rock, paper or scissors. Please try again.'
+            print_sub_menu()
             u_choice = int(raw_input('>> '))
 
         # Print user and computer choices
@@ -185,4 +188,4 @@ def variable_set_up_computer(num):
 
 
 num_of_rounds()
-play_game()
+# play_game(num_of_rounds())
