@@ -9,7 +9,7 @@ import random
 
 
 def print_main_menu():
-    print 'How many rounds would you like to play?\n'
+    print 'How many rounds would you like to play?'
     print 'Please select:'
     print '1 for best out of one round.'
     print '2 for best out of three rounds.'
@@ -57,7 +57,7 @@ def num_of_rounds():
             keep_selecting = False
 
         else:
-            print 'I\'m sorry, we didn\'t recognize that.'
+            print 'Sorry, that\'s not an option.'
             print_main_menu()
             u_round_selection = int(raw_input('>> '))
 
@@ -94,7 +94,7 @@ def play_game(rounds):
         # Determine if it's a tie
         if u_choice == c_choice:
             print 'You tied.'
-            print 'The score is still %d (you) - %d (the computer).' % (u_score, c_score)
+            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
 
         # List winning elifs for the user
         elif u_choice == 1 and c_choice == 3:
@@ -125,14 +125,14 @@ def play_game(rounds):
             print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
 
         # Determine if the game is over
-        if round_selection_var == 1:
+        if rounds == 1:
             if u_score == 1:
                 print 'You win the game!'
                 keep_playing = False
             else:
                 print 'Sorry, you lose the game.'
                 keep_playing = False
-        elif round_selection_var == 2:
+        elif rounds == 2:
             if u_score == 2:
                 print 'You win the game!'
                 keep_playing = False
@@ -141,7 +141,7 @@ def play_game(rounds):
                 keep_playing = False
             else:
                 print 'Ready to guess again?'
-        elif round_selection_var == 3:
+        elif rounds == 3:
             if u_score == 3:
                 print 'You win the game!'
                 keep_playing = False
@@ -150,7 +150,7 @@ def play_game(rounds):
                 keep_playing = False
             else:
                 print 'Ready to guess again?'
-        elif round_selection_var == 4:
+        elif rounds == 4:
             if u_score == 4:
                 print 'You win the game!'
                 keep_playing = False
@@ -188,4 +188,4 @@ def variable_set_up_computer(num):
 
 
 num_of_rounds()
-# play_game(num_of_rounds())
+play_game(num_of_rounds)
