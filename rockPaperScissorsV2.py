@@ -24,6 +24,17 @@ def print_sub_menu():
     print '3 for scissors'
 
 
+# Helper function
+# Allow the user to choose rock, paper or scissors
+def choose_rps():
+    u_choice = int(raw_input('>> '))
+    while u_choice not in [1, 2, 3]:
+        print 'You must select rock, paper or scissors. Please try again.'
+        print_sub_menu()
+        u_choice = int(raw_input('>> '))
+    return u_choice
+
+
 def num_of_rounds():
     # Determine how many games the user would like to play
     print '\nWelcome to the Rock-Paper-Scissors Game.'
@@ -76,14 +87,8 @@ def play_game(rounds):
         print_sub_menu()
 
         # Get the user's choice and randomly select the computer's choice
-        u_choice = int(raw_input('>> '))
+        u_choice = choose_rps()
         c_choice = random.randint(1, 3)
-
-        # Correct a user choice error
-        while u_choice not in [1, 2, 3]:
-            print 'You must select rock, paper or scissors. Please try again.'
-            print_sub_menu()
-            u_choice = int(raw_input('>> '))
 
         # Print user and computer choices
         print ''
