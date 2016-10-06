@@ -75,11 +75,12 @@ def num_of_rounds():
     return round_selection_var
 
 
-def play_game(rounds):
+def play_game():
     # Set up scoring and round variables
     u_score = 0
     c_score = 0
     rounds_played = 0
+    rounds = num_of_rounds()
 
     # While loop for the playing each round
     keep_playing = True
@@ -103,15 +104,15 @@ def play_game(rounds):
 
         # List winning elifs for the user
         elif u_choice == 1 and c_choice == 3:
-            print 'Rock beats scissors. You win the round!'
+            print 'Rock beats scissors. You won the round!'
             u_score += 1
             print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
         elif u_choice == 2 and c_choice == 1:
-            print 'Paper beats rock. You win the round!'
+            print 'Paper beats rock. You won the round!'
             u_score += 1
             print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
         elif u_choice == 3 and c_choice == 2:
-            print 'Scissors beats paper. You win the round!'
+            print 'Scissors beats paper. You won the round!'
             u_score += 1
             print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
 
@@ -130,16 +131,17 @@ def play_game(rounds):
             print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
 
         # Determine if the game is over
+        # print 'Here is the number of rounds: %s' % rounds
         if rounds == 1:
             if u_score == 1:
-                print 'You win the game!'
+                print 'You won the game!'
                 keep_playing = False
             else:
                 print 'Sorry, you lose the game.'
                 keep_playing = False
         elif rounds == 2:
             if u_score == 2:
-                print 'You win the game!'
+                print 'You won the game!'
                 keep_playing = False
             elif c_score == 2:
                 print 'Sorry, You lose the game.'
@@ -148,7 +150,7 @@ def play_game(rounds):
                 print 'Ready to guess again?'
         elif rounds == 3:
             if u_score == 3:
-                print 'You win the game!'
+                print 'You won the game!'
                 keep_playing = False
             elif c_score == 3:
                 print 'Sorry, You lose the game.'
@@ -157,7 +159,7 @@ def play_game(rounds):
                 print 'Ready to guess again?'
         elif rounds == 4:
             if u_score == 4:
-                print 'You win the game!'
+                print 'You won the game!'
                 keep_playing = False
             elif c_score == 4:
                 print 'Sorry, You lose the game.'
@@ -165,11 +167,11 @@ def play_game(rounds):
             else:
                 print 'Ready to guess again?'
 
-    # Print how many rounds were played
-    if rounds_played == 1:
-        print 'You played one round.'
-    else:
-        print 'You played a total of ' + str(rounds_played) + ' rounds.'
+        # Print how many rounds were played
+        if rounds_played == 1:
+            print 'You\'ve played one round.'
+        else:
+            print 'You\'ve played a total of ' + str(rounds_played) + ' rounds.'
 
 
 # Helper functions
@@ -192,5 +194,4 @@ def variable_set_up_computer(num):
         return 'The computer chose scissors.'
 
 
-num_of_rounds()
-play_game(num_of_rounds)
+play_game()
