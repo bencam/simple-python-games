@@ -9,6 +9,8 @@ import random
 
 
 def print_main_menu():
+    """Print the main menu, which prompts a user
+    to select how many rounds they would like to play"""
     print 'How many rounds would you like to play?'
     print 'Please select:'
     print '1 for best out of one round.'
@@ -18,15 +20,16 @@ def print_main_menu():
 
 
 def print_sub_menu():
+    """Print the sub menu, which prompts a user to
+    choose rock, paper or scissors"""
     print '\nPlease select:'
     print '1 for rock'
     print '2 for paper'
     print '3 for scissors'
 
 
-# Helper function
-# Allow the user to choose rock, paper or scissors
 def choose_rps():
+    """Allow the user to choose rock, paper or scissors"""
     u_choice = int(raw_input('>> '))
     while u_choice not in [1, 2, 3]:
         print 'You must select rock, paper or scissors. Please try again.'
@@ -35,8 +38,28 @@ def choose_rps():
     return u_choice
 
 
+def variable_set_up_user(num):
+    """Return the user's choice"""
+    if num == 1:
+        return 'You chose rock.'
+    elif num == 2:
+        return 'You chose paper.'
+    elif num == 3:
+        return 'You chose scissors.'
+
+
+def variable_set_up_computer(num):
+    """Return the computer's choice"""
+    if num == 1:
+        return 'The computer chose rock.'
+    elif num == 2:
+        return 'The computer chose paper.'
+    elif num == 3:
+        return 'The computer chose scissors.'
+
+
 def num_of_rounds():
-    # Determine how many games the user would like to play
+    """Determine how many games the user would like to play"""
     print '\nWelcome to the Rock-Paper-Scissors Game.'
     print_main_menu()
     u_round_selection = int(raw_input('>> '))
@@ -76,6 +99,7 @@ def num_of_rounds():
 
 
 def play_game():
+    """Execute the game"""
     # Set up scoring and round variables
     u_score = 0
     c_score = 0
@@ -172,26 +196,6 @@ def play_game():
             print 'You\'ve played one round.'
         else:
             print 'You\'ve played a total of ' + str(rounds_played) + ' rounds.'
-
-
-# Helper functions
-# Define a function that returns the user's choice
-def variable_set_up_user(num):
-    if num == 1:
-        return 'You chose rock.'
-    elif num == 2:
-        return 'You chose paper.'
-    elif num == 3:
-        return 'You chose scissors.'
-
-# Define a function that returns the computer's choice
-def variable_set_up_computer(num):
-    if num == 1:
-        return 'The computer chose rock.'
-    elif num == 2:
-        return 'The computer chose paper.'
-    elif num == 3:
-        return 'The computer chose scissors.'
 
 
 play_game()
