@@ -98,6 +98,10 @@ def num_of_rounds():
     return round_selection_var
 
 
+def print_score(u_score, c_score):
+    print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
+
+
 def play_game():
     """Execute the game"""
     # Set up scoring and round variables
@@ -121,41 +125,32 @@ def play_game():
         print variable_set_up_computer(c_choice)
         rounds_played += 1
 
-        # Determine if it's a tie
+        # Determine who won the round
         if u_choice == c_choice:
             print 'You tied.'
-            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
-
-        # List winning elifs for the user
         elif u_choice == 1 and c_choice == 3:
             print 'Rock beats scissors. You won the round!'
             u_score += 1
-            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
         elif u_choice == 2 and c_choice == 1:
             print 'Paper beats rock. You won the round!'
             u_score += 1
-            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
         elif u_choice == 3 and c_choice == 2:
             print 'Scissors beats paper. You won the round!'
             u_score += 1
-            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
-
-        # List losing elifs for the user
         elif u_choice == 1 and c_choice == 2:
             print 'Paper beats rock. You lose the round.'
             c_score += 1
-            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
         elif u_choice == 2 and c_choice == 3:
             print 'Scissors beats paper. You lose the round.'
             c_score += 1
-            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
         elif u_choice == 3 and c_choice == 1:
             print 'Rock beats scissors. You lose the round.'
             c_score += 1
-            print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
+
+        # Print the score 
+        print_score(u_score, c_score)
 
         # Determine if the game is over
-        # print 'Here is the number of rounds: %s' % rounds
         if rounds == 1:
             if u_score == 1:
                 print 'You won the game!'
