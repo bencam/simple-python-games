@@ -99,6 +99,7 @@ def num_of_rounds():
 
 
 def print_score(u_score, c_score):
+    """Print the score"""
     print 'The score is %d (you) - %d (the computer).' % (u_score, c_score)
 
 
@@ -147,7 +148,7 @@ def play_game():
             print 'Rock beats scissors. You lose the round.'
             c_score += 1
 
-        # Print the score 
+        # Print the score
         print_score(u_score, c_score)
 
         # Determine if the game is over
@@ -190,7 +191,8 @@ def play_game():
         if rounds_played == 1:
             print 'You\'ve played one round.'
         else:
-            print 'You\'ve played a total of ' + str(rounds_played) + ' rounds.'
+            print 'You\'ve played a total of ' +\
+                str(rounds_played) + ' rounds.'
 
 
 play_game()
