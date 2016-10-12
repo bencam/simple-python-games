@@ -3,27 +3,31 @@
 from random import randint
 
 
-# Generate a random word from the file dictionary.txt
-# (dictionary.txt file has close to 350,000 words in it
-# so it's hard to win ... )
-# Start by opening the dictionary and reading it
-open('dictionary.txt', 'r').read()
+def choose_word():
+    # Generate a random word from the file dictionary.txt
+    # (dictionary.txt file has close to 350,000 words in it
+    # so it's hard to win ... )
+    # Start by opening the dictionary and reading it
+    open('dictionary.txt', 'r').read()
 
-# Turn the file into a list
-dictionary = [str(line) for line in open('dictionary.txt')]
+    # Turn the file into a list
+    dictionary = [str(line) for line in open('dictionary.txt')]
 
-# Create a random number and store it in a variable
-ran_num = randint(0, (len(dictionary) - 1))
+    # Create a random number and store it in a variable
+    ran_num = randint(0, (len(dictionary) - 1))
 
-# Select a word in the dictionary list at random
-ran_word = dictionary[ran_num]
+    # Select a word in the dictionary list at random
+    ran_word = dictionary[ran_num]
 
-# Remove the last character of the word (the dictionary.txt file
-# has a '/n' character at the end of each word)
-ran_word = ran_word[:-1]
+    # Remove the last character of the word (the dictionary.txt file
+    # has a '/n' character at the end of each word)
+    ran_word = ran_word[:-1]
 
-# Turn the ran_word string into a list of letters
-word = list(ran_word)
+    # Turn the ran_word string into a list of letters
+    word = list(ran_word)
+    return word
+
+
 avail_letters = [
     'a',
     'b',
