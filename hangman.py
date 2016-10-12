@@ -22,8 +22,6 @@ ran_word = dictionary[ran_num]
 # has a '/n' character at the end of each word)
 ran_word = ran_word[:-1]
 
-
-# Set up lists and variables
 # Turn the ran_word string into a list of letters
 word = list(ran_word)
 avail_letters = [
@@ -73,14 +71,19 @@ guess_count = 0
 keep_playing = True
 
 
-# Start the game
-print 'Welcome to Hangman!'
-raw_input('When you\'re readty to start, hit return: ')
-print '\nOkay, we\'ve chosen a word, and it\'s %d letters long.' % len(ran_word)
-print str(len(ran_word) * '_ ') + '\n'
+def welcome(rw):
+    """Print out welcome message as well as spaces
+    representing the randomly chosen word"""
+    print 'Welcome to Hangman!'
+    raw_input('When you\'re ready to start, hit return: ')
+    print ''
+    print 'Okay, we\'ve chosen a word, and it\'s %d letters long.' % len(rw)
+    print str(len(rw) * '_ ')
+    print ''
+
+welcome(ran_word)
 
 
-# Helper functions
 def find_indexes(lst, item):
     """Find the index of a character (or characters) in a list"""
     start_at = -1
