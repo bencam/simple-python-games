@@ -59,7 +59,7 @@ def find_indexes(lst, item):
     return locs
 
 
-def insert_into_list(x, y):
+def insert_into_list(x, y, u_letter):
     """Insert correctly-guessed letters into the correct_guesses list"""
     for integer in x:
         y[integer] = u_letter
@@ -69,6 +69,8 @@ def play_game():
     # Set variables
     word = word_to_list()
     ran_word = choose_word()
+    print 'This is the word: %s' % word
+    print 'This is the ran_word: %s' % ran_word
     avail_letters = [
         'a',
         'b',
@@ -134,7 +136,7 @@ def play_game():
                 # Handle a letter that appears one time in the word
                 if letter_num_of_apperances == 1:
                     print 'And it appears one time.'
-                    insert_into_list(index, correct_guesses)
+                    insert_into_list(index, correct_guesses, u_letter)
 
                     # Determine if the player has won
                     if ran_word == ''.join(correct_guesses):
@@ -149,7 +151,7 @@ def play_game():
                 # Handle a letter that appears more than one time in the word
                 else:
                     print 'And it appears ' + str(letter_num_of_apperances) + ' times.'
-                    insert_into_list(index, correct_guesses)
+                    insert_into_list(index, correct_guesses, u_letter)
 
                     # Determine if the player has won
                     if ran_word == ''.join(correct_guesses):
@@ -164,18 +166,18 @@ def play_game():
             # Handle a correct letter choice that was picked previously
             else:
                 print 'But you already guessed that letter.'
-                print 'Why don\'t you try again?\n'
+                print 'Try again\n'
 
         # Handle a letter that was already chosen
         elif u_letter in chos_letters:
             print 'You already guessed that letter.'
-            print 'Why don\'t you try again?\n'
+            print 'Try again?\n'
             guess_count += 1
 
         # Handle a guess that is not in the avail_letters list
         elif u_letter not in avail_letters:
             print 'I\'m sorry, we didn\'t recognize that.'
-            print 'Why don\'t you try again?\n'
+            print 'Try again?\n'
             guess_count += 1
 
         # Handle a letter that is not in the word
