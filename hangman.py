@@ -25,9 +25,8 @@ def choose_word():
     return ran_word
 
 
-def word_to_list():
+def word_to_list(rw):
     # Turn the ran_word string into a list of letters
-    rw = choose_word()
     word = list(rw)
     return word
 
@@ -67,10 +66,10 @@ def insert_into_list(x, y, u_letter):
 
 def play_game():
     # Set variables
-    word = word_to_list()
     ran_word = choose_word()
-    print 'This is the word: %s' % word
-    print 'This is the ran_word: %s' % ran_word
+    word = word_to_list(ran_word)
+    print 'This is the word: %s' % word  # REMOVE
+    print 'This is the ran_word: %s' % ran_word  # REMOVE
     avail_letters = [
         'a',
         'b',
@@ -171,13 +170,13 @@ def play_game():
         # Handle a letter that was already chosen
         elif u_letter in chos_letters:
             print 'You already guessed that letter.'
-            print 'Try again?\n'
+            print 'Try again\n'
             guess_count += 1
 
         # Handle a guess that is not in the avail_letters list
         elif u_letter not in avail_letters:
             print 'I\'m sorry, we didn\'t recognize that.'
-            print 'Try again?\n'
+            print 'Try again\n'
             guess_count += 1
 
         # Handle a letter that is not in the word
@@ -199,7 +198,7 @@ def play_game():
                 keep_playing = False
             else:
                 print 'Here is the word so far: ' + ''.join(correct_guesses)
-                print 'Ready to guess again?\n'
+                print 'Try again\n'
 
 
 welcome()
