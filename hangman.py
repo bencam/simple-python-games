@@ -5,13 +5,12 @@ from random import randint
 
 def choose_word():
     """Generate a random word from the file dictionary.txt"""
-    # Notes: dictionary.txt file has close to 350,000 words in it
-    # so it's hard to win ... 
+    # Note: dictionary.txt file has close to 350,000 words in it
 
     open('dictionary.txt', 'r').read()
     # Turn the file into a list
     dictionary = [str(line) for line in open('dictionary.txt')]
-    
+
     # Create a random number and store it in a variable
     ran_num = randint(0, (len(dictionary) - 1))
     # Select a word in the dictionary list at random
@@ -36,7 +35,8 @@ def welcome():
     print 'Welcome to Hangman!'
     raw_input('When you\'re ready to start, hit return: ')
     print ''
-    print 'Okay, we\'ve chosen a word, and it\'s %d letters long.' % len(rw)
+    print 'Okay, we\'ve chosen a word, and it\'s %d letters long.' \
+        % len(rw)
     print str(len(rw) * '_ ')
     print ''
 
@@ -120,13 +120,15 @@ def play_game():
 
         # Handle a letter that is in the word
         if u_letter in word:
-            print 'Good guess! The letter ' + u_letter + ' is in our word.'
+            print 'Good guess! The letter ' + \
+                u_letter + ' is in our word.'
             chos_letters.extend(u_letter)
             letter_num_of_apperances = word.count(u_letter)
             index = find_indexes(word, u_letter)
             guess_count += 1
 
-            # Check to see if the correct letter choice was picked previously
+            # Check to see if the correct letter choice was
+            # picked previously
             if u_letter in avail_letters:
                 avail_letters.remove(u_letter)
 
@@ -139,25 +141,31 @@ def play_game():
                     if ran_word == ''.join(correct_guesses):
                         print '\nCongratulations! You solved the puzzle.'
                         print 'The word was ' + ran_word.upper() + '!'
-                        print 'You finished the puzzle in ' + str(guess_count) + ' guesses.\n'
+                        print 'You finished the puzzle in ' \
+                            + str(guess_count) + ' guesses.\n'
                         keep_playing = False
                     else:
-                        print 'Here is the word so far: ' + ''.join(correct_guesses)
+                        print 'Here is the word so far: ' \
+                            + ''.join(correct_guesses)
                         print 'Ready to guess again?\n'
 
-                # Handle a letter that appears more than one time in the word
+                # Handle a letter that appears more than one time
+                # in the word
                 else:
-                    print 'And it appears ' + str(letter_num_of_apperances) + ' times.'
+                    print 'And it appears ' + \
+                        str(letter_num_of_apperances) + ' times.'
                     insert_into_list(index, correct_guesses, u_letter)
 
                     # Determine if the player has won
                     if ran_word == ''.join(correct_guesses):
                         print '\nCongratulations! You solved the puzzle.'
                         print 'The word was ' + ran_word.upper() + '!'
-                        print 'You finished the puzzle in ' + str(guess_count) + ' guesses.\n'  # noqa
+                        print 'You finished the puzzle in ' \
+                            + str(guess_count) + ' guesses.\n'
                         keep_playing = False
                     else:
-                        print 'Here is the word so far: ' + ''.join(correct_guesses)
+                        print 'Here is the word so far: ' \
+                            + ''.join(correct_guesses)
                         print 'Ready to guess again?\n'
 
             # Handle a correct letter choice that was picked previously
@@ -182,7 +190,8 @@ def play_game():
             print 'I\'m sorry, ' + u_letter + ' is not in our word.'
             chos_letters.extend(u_letter)
             avail_letters.remove(u_letter)
-            print 'We\'ve added ' + body_parts[body_parts_count] + ' to our hangman.'
+            print 'We\'ve added ' + body_parts[body_parts_count] \
+                + ' to our hangman.'
             guess_count += 1
             body_parts_count += 1
 
@@ -191,11 +200,13 @@ def play_game():
                 print '\nBut we\'re all out of body parts!'
                 print 'You lose.'
                 print '\nThe word was %s.' % ran_word.upper()
-                print 'You made a total of ' + str(guess_count) + ' guesses.'
+                print 'You made a total of ' + str(guess_count) \
+                    + ' guesses.'
                 print 'Better luck next time ... \n'
                 keep_playing = False
             else:
-                print 'Here is the word so far: ' + ''.join(correct_guesses)
+                print 'Here is the word so far: ' \
+                    + ''.join(correct_guesses)
                 print 'Try again\n'
 
 
