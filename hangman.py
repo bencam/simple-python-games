@@ -4,18 +4,16 @@ from random import randint
 
 
 def choose_word():
-    # Generate a random word from the file dictionary.txt
-    # (dictionary.txt file has close to 350,000 words in it
-    # so it's hard to win ... )
-    # Start by opening the dictionary and reading it
-    open('dictionary.txt', 'r').read()
+    """Generate a random word from the file dictionary.txt"""
+    # Notes: dictionary.txt file has close to 350,000 words in it
+    # so it's hard to win ... 
 
+    open('dictionary.txt', 'r').read()
     # Turn the file into a list
     dictionary = [str(line) for line in open('dictionary.txt')]
-
+    
     # Create a random number and store it in a variable
     ran_num = randint(0, (len(dictionary) - 1))
-
     # Select a word in the dictionary list at random
     ran_word = dictionary[ran_num]
 
@@ -26,7 +24,7 @@ def choose_word():
 
 
 def word_to_list(rw):
-    # Turn the ran_word string into a list of letters
+    """Convert the ran_word string into a list of letters"""
     word = list(rw)
     return word
 
@@ -65,11 +63,11 @@ def insert_into_list(x, y, u_letter):
 
 
 def play_game():
+    """Set up game variables and execute a while loop
+    for playing the game"""
     # Set variables
     ran_word = choose_word()
     word = word_to_list(ran_word)
-    print 'This is the word: %s' % word  # REMOVE
-    print 'This is the ran_word: %s' % ran_word  # REMOVE
     avail_letters = [
         'a',
         'b',
