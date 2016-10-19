@@ -62,6 +62,17 @@ def insert_into_list(x, y, u_letter):
         y[integer] = u_letter
 
 
+def you_won(ran_word, correct_guesses, guess_count):
+    """Determine if the player won; if so, print the word
+    in uppercase and print the total number of guesses made"""
+    if ran_word == ''.join(correct_guesses):
+        print '\nCongratulations! You solved the puzzle.'
+        print 'The word was ' + ran_word.upper() + '!'
+        print 'You finished the puzzle in ' \
+            + str(guess_count) + ' guesses.\n'
+        return True
+
+
 def play_game():
     """Set up game variables and execute a while loop
     for playing the game"""
@@ -138,11 +149,7 @@ def play_game():
                     insert_into_list(index, correct_guesses, u_letter)
 
                     # Determine if the player has won
-                    if ran_word == ''.join(correct_guesses):
-                        print '\nCongratulations! You solved the puzzle.'
-                        print 'The word was ' + ran_word.upper() + '!'
-                        print 'You finished the puzzle in ' \
-                            + str(guess_count) + ' guesses.\n'
+                    if you_won(ran_word, correct_guesses, guess_count):
                         keep_playing = False
                     else:
                         print 'Here is the word so far: ' \
@@ -157,11 +164,7 @@ def play_game():
                     insert_into_list(index, correct_guesses, u_letter)
 
                     # Determine if the player has won
-                    if ran_word == ''.join(correct_guesses):
-                        print '\nCongratulations! You solved the puzzle.'
-                        print 'The word was ' + ran_word.upper() + '!'
-                        print 'You finished the puzzle in ' \
-                            + str(guess_count) + ' guesses.\n'
+                    if you_won(ran_word, correct_guesses, guess_count):
                         keep_playing = False
                     else:
                         print 'Here is the word so far: ' \
