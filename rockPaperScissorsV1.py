@@ -59,8 +59,8 @@ def game():
 
 
 # Helper functions
-# Define a function that returns the user's choice
 def variable_set_up_user(num):
+    """Return the user's choice"""
     if num == 1:
         return 'You chose rock.'
     elif num == 2:
@@ -68,8 +68,9 @@ def variable_set_up_user(num):
     elif num == 3:
         return 'You chose scissors.'
 
-# Define a function that returns the computer's choice
+
 def variable_set_up_computer(num):
+    """Returns the computer's choice"""
     if num == 1:
         return 'The computer chose rock.'
     elif num == 2:
