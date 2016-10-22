@@ -78,8 +78,7 @@ def show_score(matches, guesses, match_list, match_list_int):
     print 'Here\'s the score:'
     print 'Matches: %s' % matches
     print 'Guesses: %s' % guesses
-    print 'Here is the match_list: %s' % match_list
-    print 'Here is the match_list_int: %s' % match_list_int  # TESTING
+    print 'Matches found so far: %s' % match_list
     print ''
 
 
@@ -143,7 +142,6 @@ def play_game():
     has won or lost"""
     keep_playing = True
     deck = deck_creation()
-    print 'This is the game deck: %s' % deck  # TESTING
     disp_game_deck = ['_' for x in range(len(deck))]
     match_list = []
     match_list_int = []
@@ -157,15 +155,11 @@ def play_game():
         # First guess
         guess1_int = int(take_a_guess(match_list_int))
         guess1 = deck[guess1_int]
-        print 'Guess number one int is: %s' % guess1_int  # TESTING
-        print 'Guess number one is a: %s' % guess1  # TESTING
         deck_display(disp_game_deck, guess1_int, guess1)
 
         # Second guess
         guess2_int = int(take_a_guess(match_list_int))
         guess2 = deck[guess2_int]
-        print 'Guess number two int is: %s' % guess2_int  # TESTING
-        print 'Guess number two is a: %s' % guess2  # TESTING
         deck_display(disp_game_deck, guess2_int, guess2)
         guesses += 1
 
