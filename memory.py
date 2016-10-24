@@ -163,28 +163,20 @@ def play_game():
         deck_display(disp_game_deck, guess2_int, guess2)
         guesses += 1
 
-        # Figure out if it's a match
+        # Execute if a match was found
         if guess1 == guess2 and guess1_int != guess2_int:
+            print 'You found a match!'
+            matches += 1
+            match_list.extend(guess1)
+            match_list.extend(guess2)
+            match_list_int.append(guess1_int)
+            match_list_int.append(guess2_int)
+            deck_display_match(disp_game_deck, guess1_int, guess2_int)
+            # Exit the loop if the player won or lost
+            if win_or_lose(matches, guesses):
+                keep_playing = False
 
-            # Find out if the match was already found
-            if guess1 not in match_list:
-                print 'You found a match!'
-                matches += 1
-                match_list.extend(guess1)
-                match_list.extend(guess2)
-                match_list_int.append(guess1_int)
-                match_list_int.append(guess2_int)
-                deck_display_match(disp_game_deck, guess1_int, guess2_int)
-                # Exit the loop if the player won or lost
-                if win_or_lose(matches, guesses):
-                    keep_playing = False
-
-            else:
-                print 'You already found that match.'
-                # Exit the loop if the player lost
-                if win_or_lose(matches, guesses):
-                    keep_playing = False
-
+        # Execute if the same card was picked twice
         elif guess1_int == guess2_int:
             print 'You can\'t pick the same card twice!'
             # Reset the board
@@ -193,6 +185,7 @@ def play_game():
             if win_or_lose(matches, guesses):
                 keep_playing = False
 
+        # Execute if no match was found
         else:
             print 'Sorry, you didn\'t find a match.'
             # Reset the board
