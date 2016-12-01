@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 
-# This is a very basic text-based rock-paper-scissors game
-# Version 2
-# The main difference between version 1 and version 2 is that the latter
-# allows the user to choose how many rounds to play
+
+"""
+This is the second version of a very basic text-based
+rock-paper-scissors game.
+
+The main difference between version 1 and version 2 is that the latter
+allows the user to choose how many rounds to play.
+
+"""
+
 
 import random
 
