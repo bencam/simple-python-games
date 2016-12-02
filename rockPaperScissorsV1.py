@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
-"""This is a very basic text-based rock paper scissors game.
 
-Version 1
+"""
+This is version 1 of a very basic text-based rock paper scissors game.
 
 The primary difference between version 1 and version 2 is that the latter
 allows the user to choose the number of rounds to play (the user is given
-the choice of best out of one, three, five or seven rounds)."""
+the choice of best out of one, three, five or seven rounds).
+
+"""
 
 
 import random
