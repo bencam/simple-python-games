@@ -2,11 +2,11 @@
 
 
 """
-This is the second version of a very basic text-based
-rock-paper-scissors game.
+This is version 2 of a very basic text-based rock paper scissors game.
 
-The main difference between version 1 and version 2 is that the latter
-allows the user to choose how many rounds to play.
+The primary difference between version 1 and version 2 is that the latter
+allows the user to choose the number of rounds to play (the user is given
+the choice of best out of one, three, five or seven rounds).
 
 """
 
