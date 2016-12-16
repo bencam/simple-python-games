@@ -4,7 +4,7 @@ A collection of simple text-based games built with Python
 
 ## Usage
 
-All three games run on the command line. To play, simply clone the repository and run:
+All four games run on the command line. To play, simply clone the repository and run:
 
 `$ python file-name-of-game.py`
 
