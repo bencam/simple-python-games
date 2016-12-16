@@ -15,9 +15,12 @@ single underscore character is shown. A capital X is shown for a spot
 where a card has been removed (due to it being matched with another
 card). The deck is composed of ten pairs.
 
+More details about the game--and variations of it--can be found at
+https://en.wikipedia.org/wiki/Concentration_(game).
+
 NOTE: This script was created as part of a project to build a game
-on Google App Engine. The Google App Engine version of this game is
-still in progress but will be posted on GitHub in the near future.
+on Google App Engine. View the project repository here:
+https://github.com/bencam/pelmanism
 """
 
 
