@@ -2,6 +2,11 @@
 
 A collection of simple text-based games built with Python
 
+ - Hangman
+ - Memory
+ - Rock, Paper, Scissors (v1)
+ - Rock, Paper, Scissors (v2)
+
 ## Usage
 
 All four games run on the command line. To play, simply clone the repository and run:
