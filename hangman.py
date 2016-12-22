@@ -1,5 +1,17 @@
 #!/usr/bin/env python
 
+
+"""
+Hangman is a simple word game. The object of the game is to guess a
+randomly-selected word. This is done by choosing letters, one at a time.
+Each time a letter is chosen, the script determines if the letter is part
+of the selected word. A player wins if they correctly guess all of the
+letters in the word. If a player has not correctly guessed all of the
+letters in the word within 11 guesses, the player loses the game.
+
+"""
+
+
 from random import randint
 
 
