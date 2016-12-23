@@ -9,6 +9,12 @@ of the selected word. A player wins if they correctly guess all of the
 letters in the word. If a player has not correctly guessed all of the
 letters in the word within 11 guesses, the player loses the game.
 
+This version of hangman is a one-player game. Please note that the hangman.py
+file opens and reads a file called dictionary.txt (it uses this file to
+randomly select a word). The simple-python-games repository on GitHub includes
+a dictionary.txt file, which contains a list of (350,000!) words. A subsitute
+file can, of course, be used.
+
 """
 
 
@@ -17,8 +23,6 @@ from random import randint
 
 def choose_word():
     """Generate a random word from the file dictionary.txt"""
-    # Note: dictionary.txt file has close to 350,000 words in it
-
     open('dictionary.txt', 'r').read()
     # Turn the file into a list
     dictionary = [str(line) for line in open('dictionary.txt')]
