@@ -12,7 +12,7 @@ letters in the word within 11 guesses, the player loses the game.
 This version of hangman is a one-player game. Please note that the hangman.py
 file opens and reads a file called dictionary.txt (it uses this file to
 randomly select a word). The simple-python-games repository on GitHub includes
-a dictionary.txt file, which contains a list of (350,000!) words. A subsitute
+a dictionary.txt file, which contains a list of 350,000(!) words. A subsitute
 file can, of course, be used.
 
 """
