@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 
-"""Memory is a simple game that can be played by one or more players.
+"""
+Memory is a simple game that can be played by one or more players.
 A deck of cards composed of matching pairs is used. The cards are
 placed face down and the player or players take turns to try to find
 the matching pairs. A turn consists of turning over two cards. If a
@@ -11,16 +12,17 @@ been found.
 
 This version of the game uses capital letters for each card. When a
 card is face up, a capital letter is shown. When it is face down, a
-single underscore character is shown. A capital X is shown for a spot
+single underscore character is shown. A capital 'X' is shown for a spot
 where a card has been removed (due to it being matched with another
 card). The deck is composed of ten pairs.
 
 More details about the game--and variations of it--can be found at
 https://en.wikipedia.org/wiki/Concentration_(game).
 
-NOTE: This script was created as part of a project to build a game
+Note: This script was created as part of a project to build a game
 on Google App Engine. View the project repository here:
 https://github.com/bencam/pelmanism
+
 """
 
 
