@@ -2,11 +2,12 @@
 
 
 """
-This is version 1 of a very basic text-based rock-paper-scissors game.
+This is version 2 of a very basic text-based rock-paper-scissors game.
 
-The object of the game is to choose an object (rock, paper, or scissors) that
-'beats' the object chosen (from the same list at random) by the computer.
-The possible game scenarios, with winners indicated, are as follows:
+The object of the game is to choose an object from a list (rock, paper, or
+scissors) that 'beats' the object chosen at random (from the same list)
+by the computer. The possible game scenarios, with winners indicated, are
+as follows:
 
 rock v paper (paper wins)
 scissors v paper (scissors wins)
@@ -15,7 +16,7 @@ rock v scissors (rock wins)
 Note: the primary difference between the two versions of rock-paper-scissors
 in this repository is that version 2 allows the user to choose the number of
 rounds to play (the user is given the option of a best out of one, three, five
-or seven rounds). In version 1, the game always ends after one round.
+or seven rounds scenario). In version 1, the game always ends after one round.
 
 """
 
